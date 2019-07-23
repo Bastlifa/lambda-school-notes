@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react'
+import { Route, Link } from 'react-router-dom';
+import HomePage from './components/HomePage/HomePage'
+import NavWrapper from './components/NavWrapper/NavWrapper'
+import linkList from './linkList'
 import './App.css';
 
 function App() {
+
+  console.log(linkList)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavWrapper linkList={linkList} />
+      {/* <Route exact path="/" render={(props) => <NavWrapper {...props}  linkList={linkList} />} /> */}
     </div>
   );
 }
